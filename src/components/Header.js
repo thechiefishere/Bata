@@ -3,11 +3,11 @@ import { BsCart2 } from "react-icons/bs";
 
 const Header = () => {
   return (
-    <section>
-      <h1>
+    <section className="header">
+      <h1 className="header__logo">
         B<span>AT</span>A
       </h1>
-      <BsCart2 />
+      <BsCart2 className="header__cart" />
     </section>
   );
 };

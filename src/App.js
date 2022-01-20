@@ -4,7 +4,7 @@ import Header from "./components/Header";
 function App() {
   return (
     <AppProvider>
-      <section>
+      <section className="app">
         <Header />
       </section>
     </AppProvider>

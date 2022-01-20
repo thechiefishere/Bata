@@ -1,0 +1,38 @@
+$primary-color: rgb(0, 238, 255);
+$primary-bg: rgb(237, 241, 241);
+$secondary-color: rgb(45, 108, 245);
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary-bg;
+}
+
+.container {
+  width: 90%;
+  margin: 0px auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5%;
+  background-color: rgb(203, 77, 241);
+  &__logo {
+    font-size: 2em;
+    color: $secondary-color;
+    span {
+      font-size: 0.6em;
+      color: $primary-color;
+    }
+  }
+  &__cart {
+    font-size: 1.4em;
+    color: #000;
+  }
+}
