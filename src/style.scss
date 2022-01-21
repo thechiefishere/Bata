@@ -1,6 +1,5 @@
-$primary-color: rgb(0, 238, 255);
-$primary-bg: rgb(237, 241, 241);
-$secondary-color: rgb(45, 108, 245);
+$primary-color: rgb(79, 7, 247);
+$secondary-color: rgb(123, 72, 243);
 
 * {
   margin: 0px;
@@ -9,7 +8,7 @@ $secondary-color: rgb(45, 108, 245);
 }
 
 body {
-  background-color: $primary-bg;
+  //   background-color: $primary-bg;
 }
 
 .container {
@@ -21,18 +20,26 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5%;
-  background-color: rgb(203, 77, 241);
+  padding: 0px 5%;
+  background-color: $primary-color;
+  color: #fff;
+  height: 80px;
   &__logo {
     font-size: 2em;
-    color: $secondary-color;
     span {
       font-size: 0.6em;
-      color: $primary-color;
     }
   }
-  &__cart {
-    font-size: 1.4em;
-    color: #000;
+  &__cart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #fff;
+    padding: 2px;
+    border-radius: 5px;
+    .header__cart {
+      font-size: 1.4em;
+      margin-right: 5px;
+    }
   }
 }

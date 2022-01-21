@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #edf1f1;
-}
-
 .container {
   width: 90%;
   margin: 0px auto;
@@ -17,20 +13,28 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5%;
-  background-color: #cb4df1;
+  padding: 0px 5%;
+  background-color: #4f07f7;
+  color: #fff;
+  height: 80px;
 }
 .header__logo {
   font-size: 2em;
-  color: #2d6cf5;
 }
 .header__logo span {
   font-size: 0.6em;
-  color: #00eeff;
 }
-.header__cart {
+.header__cart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #fff;
+  padding: 2px;
+  border-radius: 5px;
+}
+.header__cart-container .header__cart {
   font-size: 1.4em;
-  color: #000;
+  margin-right: 5px;
 }
 
 /*# sourceMappingURL=index.css.map */
