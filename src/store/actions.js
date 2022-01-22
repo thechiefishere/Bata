@@ -9,6 +9,7 @@ const fetchData = async () => {
 };
 
 export const addData = () => {
+  setLoadingState(true);
   const data = fetchData();
 
   if (data.status !== "success") {
@@ -17,8 +18,16 @@ export const addData = () => {
     };
   }
 
+  setLoadingState(false);
   return {
     type: "UPDATE-DATA",
     payload: data.items,
+  };
+};
+
+export const setLoadingState = (loadingState) => {
+  return {
+    type: "LOADING-STATE",
+    payload: loadingState,
   };
 };
