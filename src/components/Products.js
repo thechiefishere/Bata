@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import Loading from "./Loading";
 import Product from "./Product";
@@ -14,7 +14,7 @@ const Products = () => {
   return (
     <section className="products">
       {allProducts.map((product) => {
-        return <Product />;
+        return <Product key={product._id} product={product} />;
       })}
     </section>
   );
