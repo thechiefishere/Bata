@@ -1,10 +1,10 @@
 const initialState = {
   isLoadingData: true,
-  data: [],
+  products: [],
 };
 
 export const reducer = (state = initialState, action) => {
-  switch (action.types) {
+  switch (action.type) {
     case "LOADING-STATE":
       return {
         ...state,
@@ -13,7 +13,7 @@ export const reducer = (state = initialState, action) => {
     case "UPDATE-DATA":
       return {
         ...state,
-        data: action.payload,
+        products: action.payload,
       };
   }
   return state;

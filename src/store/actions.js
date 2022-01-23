@@ -1,24 +1,15 @@
 const url = "http://localhost:5000/api/v1/footwears";
 
-const fetchData = async () => {
+export const fetchData = () => async (dispatch) => {
+  dispatch(setLoadingState(true));
   const response = await fetch(url);
   const data = await response.json();
-  console.log("data", data);
 
-  return data;
+  dispatch(setLoadingState(false));
+  dispatch(addData(data));
 };
 
-export const addData = () => {
-  setLoadingState(true);
-  const data = fetchData();
-
-  if (data.status !== "success") {
-    return {
-      type: "ERROR-LOADING-DATA",
-    };
-  }
-
-  setLoadingState(false);
+export const addData = (data) => {
   return {
     type: "UPDATE-DATA",
     payload: data.items,

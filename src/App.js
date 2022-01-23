@@ -1,20 +1,22 @@
 import { useEffect } from "react";
 import { AppProvider } from "./context";
-import Header from "./components/Header";
 import { useDispatch } from "react-redux";
-import { addData } from "./store/actions";
+import { addData, setLoadingState, fetchData } from "./store/actions";
+import Header from "./components/Header";
+import Products from "./components/Products";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(addData());
-  });
+    dispatch(fetchData());
+  }, []);
 
   return (
     <AppProvider>
       <section className="app">
         <Header />
+        <Products />
       </section>
     </AppProvider>
   );
