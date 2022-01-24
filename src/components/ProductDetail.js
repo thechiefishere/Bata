@@ -35,7 +35,7 @@ const ProductDetail = () => {
     <div>
       {product !== null && (
         <section>
-          <ImageSlider gallery={product.image} />
+          <ImageSlider gallery={product.images} />
         </section>
       )}
     </div>

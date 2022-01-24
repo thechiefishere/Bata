@@ -15,7 +15,7 @@ const Product = ({ product }) => {
       <div className="product__img-container">
         <img
           className={`product__img ${isBeingHoveredOn && "scale-product__img"}`}
-          src={product.image[0]}
+          src={product.images[0]}
           alt="product"
         />
         <BsCart2
@@ -25,7 +25,10 @@ const Product = ({ product }) => {
           onClick={() => navigate(`${product._id}`)}
         />
       </div>
-      <p className="product__price">N{product.price}</p>
+      <div>
+        <p>{product.name}</p>
+        <p className="product__price">N{product.price}</p>
+      </div>
     </article>
   );
 };
