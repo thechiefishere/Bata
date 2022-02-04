@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Loading from "./Loading";
-import Product from "./Product";
+import Loading from "../../components/Loading/Loading";
+import Product from "../../components/Product/Product";
 
 const Products = () => {
   const loading = useSelector((state) => state.isLoadingData);

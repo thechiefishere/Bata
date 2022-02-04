@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./ImageSlider.css";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 const ImageSlider = ({ gallery }) => {

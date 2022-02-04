@@ -1,4 +1,5 @@
 import React from "react";
+import "./Header.css";
 import { BsCart2 } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 

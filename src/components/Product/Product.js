@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Product.css";
 import { BsCart2 } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
