@@ -11,14 +11,21 @@ export const fetchData = () => async (dispatch) => {
 
 export const addData = (data) => {
   return {
-    type: "UPDATE-DATA",
+    type: "UPDATE_DATA",
     payload: data.items,
   };
 };
 
 export const setLoadingState = (loadingState) => {
   return {
-    type: "LOADING-STATE",
+    type: "LOADING_STATE",
     payload: loadingState,
+  };
+};
+
+export const addToCart = (item) => {
+  return {
+    type: "ADD_TO_CART",
+    payload: item,
   };
 };

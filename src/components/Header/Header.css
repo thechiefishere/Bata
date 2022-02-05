@@ -17,7 +17,19 @@
   margin-left: 20px;
 }
 .header__cart {
+  position: relative;
+}
+.header__cart-logo {
   font-size: 1.4em;
   margin-right: 5px;
-  color: #4f07f7;
+  /* color: #4f07f7; */
+}
+.header__cart-count {
+  position: absolute;
+  right: -5px;
+  top: -10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 40%;
+  padding: 2px 4px;
 }

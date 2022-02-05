@@ -1,13 +1,14 @@
 import React from "react";
+import "./ItemDetails.css";
 
 const ItemDetails = ({ item }) => {
-  const { name, id: _id } = item;
+  const { name, _id: id } = item;
 
   return (
-    <aside>
-      <h1>{name}</h1>
-      <h3>Item: {id}</h3>
-      <h3>Qty: </h3>
+    <aside className="cart-details">
+      <h3>{name}</h3>
+      <h5>Item: {id}</h5>
+      <h5>Qty: </h5>
     </aside>
   );
 };

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ProductDetails.css";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setLoadingState } from "../../store/actions";
+import { setLoadingState, addToCart } from "../../store/actions";
 import Loading from "../../components/Loading/Loading";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import { BsCart2 } from "react-icons/bs";
@@ -39,6 +39,10 @@ const ProductDetail = () => {
   const decreaseOrder = () => {
     if (orderCount === 1) return;
     setOrderCount((prev) => prev - 1);
+  };
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
   };
 
   if (loading) {
@@ -79,7 +83,7 @@ const ProductDetail = () => {
               <p>{orderCount}</p>
               <button onClick={increaseOrder}>+</button>
             </div>
-            <button className="details__btn">
+            <button onClick={handleAddToCart} className="details__btn">
               <BsCart2 /> Add To Cart
             </button>
           </article>
