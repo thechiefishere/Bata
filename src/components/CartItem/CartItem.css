@@ -27,6 +27,10 @@
   border-bottom: 2px solid #333;
   border-radius: 0%;
 }
+.btn--item:hover {
+  border: 1px solid rgb(79, 7, 247);
+  border-radius: 10px;
+}
 .item .btn-group {
   display: flex;
 }
