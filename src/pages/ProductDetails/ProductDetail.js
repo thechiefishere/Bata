@@ -14,7 +14,7 @@ const ProductDetail = () => {
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.isLoadingData);
   const arr = [40, 41, 42, 43, 44];
-  const [selectedSize, setSelectedSize] = useState(0);
+  const [selectedSize, setSelectedSize] = useState(40);
 
   const fetchProduct = async () => {
     dispatch(setLoadingState(true));
@@ -42,7 +42,12 @@ const ProductDetail = () => {
   };
 
   const handleAddToCart = () => {
-    dispatch(addToCart(product));
+    const cartItem = {
+      product,
+      quantity: orderCount,
+      size: selectedSize,
+    };
+    dispatch(addToCart(cartItem));
   };
 
   if (loading) {

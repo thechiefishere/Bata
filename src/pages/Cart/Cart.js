@@ -11,7 +11,7 @@ const Cart = () => {
       <h2 className="cart__title">shopping bag(0)</h2>
       <article className="cart__items">
         {cartItems.map((item) => {
-          return <CartItem key={item._id} item={item} />;
+          return <CartItem key={item.product._id} item={item} />;
         })}
       </article>
     </section>

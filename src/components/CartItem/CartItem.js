@@ -5,7 +5,7 @@ import { removeFromCart } from "../../store/actions";
 import { useDispatch } from "react-redux";
 
 const CartItem = ({ item }) => {
-  const { images, name, price, _id: id } = item;
+  const { images, name, price, _id: id } = item.product;
   const dispatch = useDispatch();
 
   return (
