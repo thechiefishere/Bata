@@ -1,33 +1,28 @@
+/* $primary-color: rgb(79, 7, 247);
+$secondary-color: #222;
+$primary-font: "Oswald", sans-serif;
+$secondary-font: "Merriweather", serif; */
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
-.container {
-  width: 90%;
-  margin: 0px auto;
+body {
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 5%;
-  height: 80px;
-}
-.header__start {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.header__logo {
+h1 {
   font-size: 2em;
-  margin-left: 20px;
 }
-.header__cart {
-  font-size: 1.4em;
-  margin-right: 5px;
+
+.btn {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(79, 7, 247);
+  color: #fff;
 }
 
 /*# sourceMappingURL=index.css.map */

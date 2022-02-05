@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5%;
+  height: 80px;
+}
+.header__start {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 2em;
+  margin-left: 20px;
+}
+.header__cart {
+  position: relative;
+}
+.header__cart-logo {
+  font-size: 1.4em;
+  margin-right: 5px;
+  /* color: #4f07f7; */
+}
+.header__cart-count {
+  position: absolute;
+  right: -5px;
+  top: -10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 40%;
+  padding: 2px 4px;
+}

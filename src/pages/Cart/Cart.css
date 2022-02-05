@@ -1,0 +1,10 @@
+.cart {
+  width: 95%;
+  margin: 0 auto;
+}
+.cart__title {
+  text-align: center;
+  margin: 40px 0px;
+  text-transform: uppercase;
+  color: rgb(79, 7, 247);
+}

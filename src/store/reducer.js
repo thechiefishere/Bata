@@ -1,15 +1,26 @@
 const initialState = {
-  data: [],
+  isLoadingData: true,
+  products: [],
+  cartItems: [],
 };
 
-export default reducer = (state = initialState, actions) => {
-  switch (actions.type) {
+export const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "LOADING_STATE":
+      return {
+        ...state,
+        isLoadingData: action.payload,
+      };
     case "UPDATE_DATA":
       return {
         ...state,
-        data: actions.payload,
+        products: action.payload,
       };
-    default:
-      return state;
+    case "ADD_TO_CART":
+      return {
+        ...state,
+        cartItems: [...state.cartItems, action.payload],
+      };
   }
+  return state;
 };

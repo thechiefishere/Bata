@@ -1,17 +1,31 @@
-const url = "http://localhost:5000";
+const url = "http://localhost:5000/api/v1/footwears";
 
-const fetchData = async () => {
+export const fetchData = () => async (dispatch) => {
+  dispatch(setLoadingState(true));
   const response = await fetch(url);
   const data = await response.json();
 
-  return data;
+  dispatch(setLoadingState(false));
+  dispatch(addData(data));
 };
 
-export const addData = () => {
-  const data = fetchData();
-
+export const addData = (data) => {
   return {
     type: "UPDATE_DATA",
-    payload: data,
+    payload: data.items,
+  };
+};
+
+export const setLoadingState = (loadingState) => {
+  return {
+    type: "LOADING_STATE",
+    payload: loadingState,
+  };
+};
+
+export const addToCart = (item) => {
+  return {
+    type: "ADD_TO_CART",
+    payload: item,
   };
 };
