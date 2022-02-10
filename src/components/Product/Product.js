@@ -13,23 +13,24 @@ const Product = ({ product }) => {
       onMouseOver={() => setIsBeingHoveredOn(true)}
       onMouseOut={() => setIsBeingHoveredOn(false)}
     >
-      <div className="product__img-container">
-        <img
-          className={`product__img ${isBeingHoveredOn && "scale-product__img"}`}
-          src={product.images[0]}
-          alt="product"
-        />
-        <BsCart2
-          className={`product__cart ${
-            isBeingHoveredOn && "show-product__cart"
-          }`}
-          onClick={() => navigate(`${product._id}`)}
-        />
+      <div onClick={() => navigate(`${product._id}`)}>
+        <div className="product__img-container">
+          <img
+            className={`product__img ${
+              isBeingHoveredOn && "scale-product__img"
+            }`}
+            src={product.images[0]}
+            alt="product"
+          />
+        </div>
+        <div>
+          <p>{product.name}</p>
+          <p className="product__price">N{product.price}</p>
+        </div>
       </div>
-      <div>
-        <p>{product.name}</p>
-        <p className="product__price">N{product.price}</p>
-      </div>
+      <BsCart2
+        className={`product__cart ${isBeingHoveredOn && "show-product__cart"}`}
+      />
     </article>
   );
 };
