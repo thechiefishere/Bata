@@ -12,6 +12,7 @@ $secondary-font: "Merriweather", serif; */
 body {
   font-family: "Oswald", sans-serif;
   font-weight: 400;
+  position: relative;
 }
 
 h1 {

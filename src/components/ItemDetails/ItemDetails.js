@@ -6,7 +6,7 @@ const ItemDetails = ({ item }) => {
 
   return (
     <aside className="cart-details">
-      <h3>{name}</h3>
+      <h3 className="cart-details__name">{name}</h3>
       <h5>Item: {id}</h5>
       <h5>Qty: {item.quantity}</h5>
       <h5>Size: {item.size}</h5>

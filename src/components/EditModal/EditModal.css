@@ -1,0 +1,87 @@
+.edit {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 15px;
+}
+.edit__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.edit__cancel {
+  color: red;
+  font-size: 1.5em;
+}
+.edit__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 30vh;
+}
+.edit__img {
+  height: 100%;
+  width: 40%;
+}
+.edit__attributes {
+  width: 58%;
+}
+.edit__attribute {
+  margin: 10px 0px;
+}
+.edit__sizes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.edit__sizes__box {
+  border: 1px solid #999;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 12px;
+  margin-bottom: 5px;
+  position: relative;
+}
+.edit__sizes__box input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.edit__sizes .selected {
+  background-color: #222;
+  color: #fff;
+}
+.edit__quantity {
+  display: flex;
+  align-items: center;
+}
+.edit__order {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  font-size: 1.3em;
+}
+.edit__order button {
+  background: none;
+  font-size: 1.6em;
+  border: none;
+}
+.edit__order button:hover {
+  color: #4f07f7;
+  cursor: pointer;
+}
+.btn--edit {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}

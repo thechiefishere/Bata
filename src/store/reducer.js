@@ -2,6 +2,8 @@ const initialState = {
   isLoadingData: true,
   products: [],
   cartItems: [],
+  showEditModal: false,
+  itemToEdit: {},
 };
 
 export const reducer = (state = initialState, action) => {
@@ -23,11 +25,36 @@ export const reducer = (state = initialState, action) => {
       };
     case "REMOVE_FROM_CART":
       const updatedCart = state.cartItems.filter(
-        (item) => item._id !== action.payload
+        (item, index) => index !== action.payload
       );
       return {
         ...state,
         cartItems: updatedCart,
+      };
+    case "UPDATE_ITEM_TO_EDIT":
+      const item = state.cartItems[action.payload];
+      return {
+        ...state,
+        itemToEdit: item,
+      };
+    case "SHOW_EDIT_MODAL":
+      return {
+        ...state,
+        showEditModal: true,
+      };
+    case "HIDE_EDIT_MODAL":
+      return {
+        ...state,
+        showEditModal: false,
+      };
+    case "EDIT_CART_ITEM":
+      const updatedCartItem = state.cartItems.map((item, index) => {
+        if (index === action.payload.index) return action.payload.item;
+        return item;
+      });
+      return {
+        ...state,
+        cartItems: updatedCartItem,
       };
     default:
       return state;

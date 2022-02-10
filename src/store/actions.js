@@ -30,9 +30,35 @@ export const addToCart = (item) => {
   };
 };
 
-export const removeFromCart = (id) => {
+export const removeFromCart = (index) => {
   return {
     type: "REMOVE_FROM_CART",
-    payload: id,
+    payload: index,
+  };
+};
+
+export const updateItemToEdit = (itemIndex) => {
+  return {
+    type: "UPDATE_ITEM_TO_EDIT",
+    payload: itemIndex,
+  };
+};
+
+export const showEditModal = () => {
+  return {
+    type: "SHOW_EDIT_MODAL",
+  };
+};
+
+export const hideEditModal = () => {
+  return {
+    type: "HIDE_EDIT_MODAL",
+  };
+};
+
+export const editCartItem = (index, item) => {
+  return {
+    type: "EDIT_CART_ITEM",
+    payload: { index, item },
   };
 };

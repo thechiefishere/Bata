@@ -1,12 +1,21 @@
 import React from "react";
 import "./CartItem.css";
 import ItemDetails from "../ItemDetails/ItemDetails";
-import { removeFromCart } from "../../store/actions";
+import {
+  removeFromCart,
+  updateItemToEdit,
+  showEditModal,
+} from "../../store/actions";
 import { useDispatch } from "react-redux";
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, index }) => {
   const { images, name, price, _id: id } = item.product;
   const dispatch = useDispatch();
+
+  const handleEdit = () => {
+    dispatch(updateItemToEdit(index));
+    dispatch(showEditModal());
+  };
 
   return (
     <section className="item">
@@ -17,13 +26,15 @@ const CartItem = ({ item }) => {
       <div className="item__edit">
         <div className="btn-group">
           <button
-            onClick={() => dispatch(removeFromCart(id))}
+            onClick={() => dispatch(removeFromCart(index))}
             className="btn btn--item"
           >
             Remove
           </button>
           <div className="seperator"></div>
-          <button className="btn btn--item">Edit</button>
+          <button onClick={handleEdit} className="btn btn--item">
+            Edit
+          </button>
         </div>
         <h4>${price}</h4>
       </div>
