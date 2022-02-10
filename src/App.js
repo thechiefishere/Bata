@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Products from "./pages/Products/Products";
 import ProductDetail from "./pages/ProductDetails/ProductDetail";
 import Cart from "./pages/Cart/Cart";
+import Sidebar from "./components/Sidebar/Sidebar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     <Router>
       <section className="app">
         <Header />
+        <Sidebar />
         <Routes>
           <Route path="/" element={<Products />} />
           <Route path="/:productId" element={<ProductDetail />} />

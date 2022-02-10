@@ -4,6 +4,7 @@ const initialState = {
   cartItems: [],
   showEditModal: false,
   itemToEdit: {},
+  showSidebar: false,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -55,6 +56,16 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         cartItems: updatedCartItem,
+      };
+    case "SHOW_SIDEBAR":
+      return {
+        ...state,
+        showSidebar: true,
+      };
+    case "HIDE_SIDEBAR":
+      return {
+        ...state,
+        showSidebar: false,
       };
     default:
       return state;

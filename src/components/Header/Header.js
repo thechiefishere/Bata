@@ -2,12 +2,14 @@ import React from "react";
 import "./Header.css";
 import { BsCart2 } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
+import { showSidebar } from "../../store/actions";
 
 const Header = () => {
   const cartItems = useSelector((state) => state.cartItems);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const openCart = () => {
     navigate("/cart");
@@ -16,7 +18,10 @@ const Header = () => {
   return (
     <section className="header">
       <div className="header__start">
-        <FaBars className="header__menu" />
+        <FaBars
+          onClick={() => dispatch(showSidebar())}
+          className="header__menu"
+        />
         <Link to="/" className="header__logo">
           BATA
         </Link>

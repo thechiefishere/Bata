@@ -56,6 +56,18 @@ export const hideEditModal = () => {
   };
 };
 
+export const showSidebar = () => {
+  return {
+    type: "SHOW_SIDEBAR",
+  };
+};
+
+export const hideSidebar = () => {
+  return {
+    type: "HIDE_SIDEBAR",
+  };
+};
+
 export const editCartItem = (index, item) => {
   return {
     type: "EDIT_CART_ITEM",
