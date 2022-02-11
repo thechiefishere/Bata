@@ -36,7 +36,7 @@ const CartItem = ({ item, index }) => {
             Edit
           </button>
         </div>
-        <h4>${price}</h4>
+        <h4>N{parseInt(price.replace(",", "")) * item.quantity}</h4>
       </div>
     </section>
   );

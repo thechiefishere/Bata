@@ -7,15 +7,15 @@ const Checkout = ({ cartItems }) => {
     <aside className="checkout">
       <div className="checkout__block">
         <h3>Subtotal: </h3>
-        <h3>${getSubTotal(cartItems)}</h3>
+        <h3>N{getSubTotal(cartItems)}</h3>
       </div>
       <div className="checkout__block">
-        <h3>TAX: </h3>
-        <h3>${getTotalTax(cartItems)}</h3>
+        <h3>VAT: </h3>
+        <h3>N{getTotalTax(cartItems)}</h3>
       </div>
       <div className="checkout__block">
         <h3>TOTAL: </h3>
-        <h3>${getSumTotal(cartItems)}</h3>
+        <h3>N{getSumTotal(cartItems)}</h3>
       </div>
     </aside>
   );

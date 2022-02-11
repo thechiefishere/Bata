@@ -29,7 +29,7 @@ const ItemModal = () => {
         alt={product.name}
       />
       <h4>{product.name}</h4>
-      <h4>{product.price}</h4>
+      <h4>N{product.price}</h4>
       <button
         onClick={() => dispatch(hideItemModal())}
         className="btn item-modal__btn"
