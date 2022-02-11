@@ -5,6 +5,8 @@ const initialState = {
   showEditModal: false,
   itemToEdit: {},
   showSidebar: false,
+  clickedProductId: -1,
+  showItemModal: false,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -66,6 +68,21 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         showSidebar: false,
+      };
+    case "CHANGE_CLICKED_PRODUCT":
+      return {
+        ...state,
+        clickedProductId: action.payload,
+      };
+    case "SHOW_ITEM_MODAL":
+      return {
+        ...state,
+        showItemModal: true,
+      };
+    case "HIDE_ITEM_MODAL":
+      return {
+        ...state,
+        showItemModal: false,
       };
     default:
       return state;

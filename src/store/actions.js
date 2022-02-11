@@ -74,3 +74,22 @@ export const editCartItem = (index, item) => {
     payload: { index, item },
   };
 };
+
+export const changeClickedProductId = (id) => {
+  return {
+    type: "CHANGE_CLICKED_PRODUCT",
+    payload: id,
+  };
+};
+
+export const showItemModal = () => {
+  return {
+    type: "SHOW_ITEM_MODAL",
+  };
+};
+
+export const hideItemModal = () => {
+  return {
+    type: "HIDE_ITEM_MODAL",
+  };
+};

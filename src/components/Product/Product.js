@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import "./Product.css";
 import { BsCart2 } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { changeClickedProductId, showItemModal } from "../../store/actions";
 
 const Product = ({ product }) => {
   const [isBeingHoveredOn, setIsBeingHoveredOn] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <article
@@ -29,6 +32,10 @@ const Product = ({ product }) => {
         </div>
       </div>
       <BsCart2
+        onClick={() => {
+          dispatch(changeClickedProductId(product._id));
+          dispatch(showItemModal());
+        }}
         className={`product__cart ${isBeingHoveredOn && "show-product__cart"}`}
       />
     </article>
