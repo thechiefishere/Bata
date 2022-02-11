@@ -3,6 +3,7 @@ import "./Cart.css";
 import { useSelector } from "react-redux";
 import CartItem from "../../components/CartItem/CartItem";
 import EditModal from "../../components/EditModal/EditModal";
+import Checkout from "../../components/Checkout/Checkout";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cartItems);
@@ -15,6 +16,7 @@ const Cart = () => {
           return <CartItem key={item.product._id} item={item} index={index} />;
         })}
       </article>
+      <Checkout cartItems={cartItems} />
       <EditModal />
     </section>
   );

@@ -1,0 +1,23 @@
+.checkout {
+  margin: 20px 0px;
+}
+.checkout__block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkout__block h3 {
+  margin-right: 10px;
+}
+.checkout__block:last-of-type {
+  position: relative;
+}
+.checkout__block:last-of-type::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #000;
+}

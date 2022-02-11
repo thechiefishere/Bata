@@ -5,6 +5,7 @@ import { FaBars } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { showSidebar } from "../../store/actions";
+import { getNumberOfItemsInCart } from "../../util/functions";
 
 const Header = () => {
   const cartItems = useSelector((state) => state.cartItems);
@@ -28,7 +29,9 @@ const Header = () => {
       </div>
       <div onClick={openCart} className="header__cart">
         <BsCart2 className="header__cart-logo" />
-        <p className="header__cart-count">{cartItems.length}</p>
+        <p className="header__cart-count">
+          {getNumberOfItemsInCart(cartItems)}
+        </p>
       </div>
     </section>
   );
