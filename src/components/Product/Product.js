@@ -3,7 +3,11 @@ import "./Product.css";
 import { BsCart2 } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { changeClickedProductId, showItemModal } from "../../store/actions";
+import {
+  addToCart,
+  changeClickedProductId,
+  showItemModal,
+} from "../../store/actions";
 
 const Product = ({ product }) => {
   const [isBeingHoveredOn, setIsBeingHoveredOn] = useState(false);
@@ -33,6 +37,12 @@ const Product = ({ product }) => {
       </div>
       <BsCart2
         onClick={() => {
+          const item = {
+            product,
+            quantity: 1,
+            size: 40,
+          };
+          dispatch(addToCart(item));
           dispatch(changeClickedProductId(product._id));
           dispatch(showItemModal());
         }}

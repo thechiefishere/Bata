@@ -9,6 +9,7 @@
   box-shadow: 2px 4px 20px #aaa;
   text-align: center;
   background-color: #fff;
+  color: rgb(79, 7, 247);
 }
 .product__img-container .product__img {
   display: block;
