@@ -14,12 +14,16 @@ const Cart = () => {
       <h2 className="cart__title">
         shopping bag({getNumberOfItemsInCart(cartItems)})
       </h2>
-      <article className="cart__items">
-        {cartItems.map((item, index) => {
-          return <CartItem key={item.product._id} item={item} index={index} />;
-        })}
-      </article>
-      <Checkout cartItems={cartItems} />
+      <section className="cart__details">
+        <article className="cart__items">
+          {cartItems.map((item, index) => {
+            return (
+              <CartItem key={item.product._id} item={item} index={index} />
+            );
+          })}
+        </article>
+        <Checkout cartItems={cartItems} />
+      </section>
       <EditModal />
     </section>
   );

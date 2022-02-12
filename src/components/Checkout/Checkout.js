@@ -1,6 +1,11 @@
 import React from "react";
 import "./Checkout.css";
-import { getSubTotal, getSumTotal, getTotalTax } from "../../util/functions";
+import {
+  getNumberOfItemsInCart,
+  getSubTotal,
+  getSumTotal,
+  getTotalTax,
+} from "../../util/functions";
 
 const Checkout = ({ cartItems }) => {
   return (
@@ -14,9 +19,19 @@ const Checkout = ({ cartItems }) => {
         <h3>N{getTotalTax(cartItems)}</h3>
       </div>
       <div className="checkout__block">
+        <h3>Esitmated Shiping: </h3>
+        <h3>Free</h3>
+      </div>
+      <div className="checkout__block">
         <h3>TOTAL: </h3>
         <h3>N{getSumTotal(cartItems)}</h3>
       </div>
+      <button className="btn btn-checkout">
+        CHECKOUT({getNumberOfItemsInCart(cartItems)})
+      </button>
+      <button className="btn btn-paypal">
+        PAY<span>PAL</span>
+      </button>
     </aside>
   );
 };

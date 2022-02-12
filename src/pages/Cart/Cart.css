@@ -9,3 +9,25 @@
   text-transform: uppercase;
   color: rgb(79, 7, 247);
 }
+
+@media (min-width: 700px) {
+  .cart__details {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .cart__items {
+    flex-basis: 60%;
+    margin-right: 20px;
+  }
+}
+@media (min-width: 900px) {
+  .cart {
+    width: 85%;
+  }
+}
+@media (min-width: 1200px) {
+  .cart {
+    width: 80%;
+  }
+}

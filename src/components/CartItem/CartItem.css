@@ -12,6 +12,7 @@
 .item__image {
   height: 100%;
   width: 40%;
+  border-radius: 10px;
 }
 .item__edit {
   padding: 0px 15px;
@@ -33,6 +34,7 @@
 }
 .item .btn-group {
   display: flex;
+  margin-top: 10px;
 }
 .seperator {
   height: 3vh;
@@ -41,3 +43,10 @@
   margin-top: 5px;
   margin-right: 5px;
 }
+
+/* @media (min-width: 700px) {
+  .item {
+    width: 80%;
+    background-color: red;
+  }
+} */
