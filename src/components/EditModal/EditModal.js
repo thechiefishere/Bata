@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createRef } from "react";
 import "./EditModal.css";
 import { useSelector, useDispatch } from "react-redux";
 import { FaTimes } from "react-icons/fa";
@@ -11,6 +11,7 @@ const EditModal = () => {
   const cartItems = useSelector((state) => state.cartItems);
   const dispatch = useDispatch();
 
+  const editRef = createRef();
   const [orderCount, setOrderCount] = useState(1);
   const arr = [40, 41, 42, 43, 44];
   const [selectedSize, setSelectedSize] = useState(40);
@@ -40,56 +41,65 @@ const EditModal = () => {
     dispatch(hideEditModal());
   };
 
+  const onHideModal = (e) => {
+    if (!editRef.current.contains(e.target)) {
+      dispatch(hideEditModal());
+    }
+  };
+
   return (
     <div>
       {show && (
-        <section className="edit">
-          <div className="edit__title">
-            <h2>Edit Item</h2>
-            <FaTimes
-              className="edit__cancel"
-              onClick={() => dispatch(hideEditModal())}
-            />
-          </div>
-          <section className="edit__details">
-            <img
-              className="edit__img"
-              src={item.product.images[0]}
-              alt={item.product.name}
-            />
-            <aside className="edit__attributes">
-              <div className="edit__size">
-                <h3>Size:</h3>
-                <div className="edit__sizes">
-                  {arr.map((val, index) => {
-                    return (
-                      <div
-                        className={`edit__sizes__box ${
-                          selectedSize === val && "selected"
-                        }`}
-                        key={index}
-                        onClick={() => setSelectedSize(val)}
-                      >
-                        <input type="radio" name="size" />
-                        {val}
-                      </div>
-                    );
-                  })}
+        <section onClick={(e) => onHideModal(e)}>
+          <div className="edit__cont"></div>
+          <section ref={editRef} className="edit">
+            <div className="edit__title">
+              <h2>Edit Item</h2>
+              <FaTimes
+                className="edit__cancel"
+                onClick={() => dispatch(hideEditModal())}
+              />
+            </div>
+            <section className="edit__details">
+              <img
+                className="edit__img"
+                src={item.product.images[0]}
+                alt={item.product.name}
+              />
+              <aside className="edit__attributes">
+                <div className="edit__size">
+                  <h3>Size:</h3>
+                  <div className="edit__sizes">
+                    {arr.map((val, index) => {
+                      return (
+                        <div
+                          className={`edit__sizes__box ${
+                            selectedSize === val && "selected"
+                          }`}
+                          key={index}
+                          onClick={() => setSelectedSize(val)}
+                        >
+                          <input type="radio" name="size" />
+                          {val}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-              <aside className="edit__quantity">
-                <h3>Quantity:</h3>
-                <div className="edit__order">
-                  <button onClick={decreaseOrder}>-</button>
-                  <p>{orderCount}</p>
-                  <button onClick={increaseOrder}>+</button>
-                </div>
+                <aside className="edit__quantity">
+                  <h3>Quantity:</h3>
+                  <div className="edit__order">
+                    <button onClick={decreaseOrder}>-</button>
+                    <p>{orderCount}</p>
+                    <button onClick={increaseOrder}>+</button>
+                  </div>
+                </aside>
+                <button onClick={handleSave} className="btn btn--edit">
+                  Save
+                </button>
               </aside>
-            </aside>
+            </section>
           </section>
-          <button onClick={handleSave} className="btn btn--edit">
-            Save
-          </button>
         </section>
       )}
     </div>
