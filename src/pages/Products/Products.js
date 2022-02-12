@@ -1,4 +1,5 @@
 import React from "react";
+import "./Products.css";
 import { useSelector } from "react-redux";
 import ItemModal from "../../components/ItemModal/ItemModal";
 import Loading from "../../components/Loading/Loading";

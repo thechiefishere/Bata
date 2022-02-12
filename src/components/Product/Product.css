@@ -6,6 +6,8 @@
   border-radius: 10px;
   padding: 5px;
   position: relative;
+  box-shadow: 2px 4px 20px #aaa;
+  text-align: center;
 }
 .product__img-container .product__img {
   display: block;
@@ -30,4 +32,15 @@
 .show-product__cart {
   width: 15%;
   height: 40px;
+}
+
+@media (min-width: 600px) {
+  .product {
+    width: 45%;
+  }
+}
+@media (min-width: 900px) {
+  .product {
+    width: 32%;
+  }
 }

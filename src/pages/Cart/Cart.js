@@ -4,13 +4,16 @@ import { useSelector } from "react-redux";
 import CartItem from "../../components/CartItem/CartItem";
 import EditModal from "../../components/EditModal/EditModal";
 import Checkout from "../../components/Checkout/Checkout";
+import { getNumberOfItemsInCart } from "../../util/functions";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cartItems);
 
   return (
     <section className="cart">
-      <h2 className="cart__title">shopping bag(0)</h2>
+      <h2 className="cart__title">
+        shopping bag({getNumberOfItemsInCart(cartItems)})
+      </h2>
       <article className="cart__items">
         {cartItems.map((item, index) => {
           return <CartItem key={item.product._id} item={item} index={index} />;
