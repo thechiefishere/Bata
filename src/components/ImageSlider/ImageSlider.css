@@ -1,5 +1,5 @@
 .slider {
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
   height: 50vh;
   position: relative;
@@ -29,4 +29,10 @@
   color: #fff;
   padding: 4px;
   border-radius: 50%;
+}
+
+@media (min-width: 550px) {
+  .slider {
+    display: none;
+  }
 }

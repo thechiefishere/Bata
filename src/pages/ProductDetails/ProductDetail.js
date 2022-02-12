@@ -6,6 +6,7 @@ import { setLoadingState, addToCart } from "../../store/actions";
 import Loading from "../../components/Loading/Loading";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import { BsCart2 } from "react-icons/bs";
+import ImageStack from "../../components/ImageStack/ImageStack";
 
 const ProductDetail = () => {
   const [product, setProduct] = useState(null);
@@ -58,7 +59,10 @@ const ProductDetail = () => {
     <div>
       {product !== null && (
         <section className="details">
-          <ImageSlider gallery={product.images} />
+          <aside className="details__image">
+            <ImageSlider gallery={product.images} />
+            <ImageStack gallery={product.images} name={product.name} />
+          </aside>
           <article className="details__text">
             <p className="details__heading">BATA COMPANY</p>
             <h3 className="details__name">{product.name}</h3>
@@ -83,14 +87,16 @@ const ProductDetail = () => {
               </div>
             </div>
             <h3 className="details__price">N{product.price}</h3>
-            <div className="details__order">
-              <button onClick={decreaseOrder}>-</button>
-              <p>{orderCount}</p>
-              <button onClick={increaseOrder}>+</button>
+            <div className="details__btn-grp">
+              <div className="details__quantity">
+                <button onClick={decreaseOrder}>-</button>
+                <p>{orderCount}</p>
+                <button onClick={increaseOrder}>+</button>
+              </div>
+              <button onClick={handleAddToCart} className="details__cart-btn">
+                <BsCart2 /> Add To Cart
+              </button>
             </div>
-            <button onClick={handleAddToCart} className="details__btn">
-              <BsCart2 /> Add To Cart
-            </button>
           </article>
         </section>
       )}
