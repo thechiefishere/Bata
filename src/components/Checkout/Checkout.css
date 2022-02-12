@@ -1,5 +1,7 @@
 .checkout {
   margin: 40px 0px;
+  background-color: #ccc;
+  padding: 10px 5px;
 }
 .checkout__block {
   display: flex;
