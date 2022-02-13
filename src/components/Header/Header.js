@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { showSidebar } from "../../store/actions";
 import { getNumberOfItemsInCart } from "../../util/functions";
+import Navbar from "../Navbar/Navbar";
 
 const Header = () => {
   const cartItems = useSelector((state) => state.cartItems);
@@ -27,6 +28,7 @@ const Header = () => {
           BATA
         </Link>
       </div>
+      <Navbar />
       <div onClick={openCart} className="header__cart">
         <BsCart2 className="header__cart-logo" />
         <p className="header__cart-count">

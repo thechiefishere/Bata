@@ -22,7 +22,6 @@
 .header__cart-logo {
   font-size: 1.4em;
   margin-right: 5px;
-  /* color: #4f07f7; */
 }
 .header__cart-count {
   position: absolute;
@@ -32,4 +31,10 @@
   color: #fff;
   border-radius: 40%;
   padding: 2px 4px;
+}
+
+@media (min-width: 600px) {
+  .header__menu {
+    display: none;
+  }
 }

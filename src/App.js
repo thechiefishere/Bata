@@ -6,6 +6,7 @@ import Products from "./pages/Products/Products";
 import ProductDetail from "./pages/ProductDetails/ProductDetail";
 import Cart from "./pages/Cart/Cart";
 import Sidebar from "./components/Sidebar/Sidebar";
+import About from "./pages/About/About";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Products />} />
           <Route path="/:productId" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </section>
     </Router>
