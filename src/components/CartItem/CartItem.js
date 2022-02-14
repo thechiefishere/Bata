@@ -8,12 +8,12 @@ import {
 } from "../../store/actions";
 import { useDispatch } from "react-redux";
 
-const CartItem = ({ item, index }) => {
+const CartItem = ({ item }) => {
   const { images, name, price, _id: id } = item.product;
   const dispatch = useDispatch();
 
   const handleEdit = () => {
-    dispatch(updateItemToEdit(index));
+    dispatch(updateItemToEdit(item.id));
     dispatch(showEditModal());
   };
 
@@ -26,7 +26,7 @@ const CartItem = ({ item, index }) => {
       <div className="item__edit">
         <div className="btn-group">
           <button
-            onClick={() => dispatch(removeFromCart(index))}
+            onClick={() => dispatch(removeFromCart(item.id))}
             className="btn btn--item"
           >
             Remove

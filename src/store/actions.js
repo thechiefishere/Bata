@@ -30,17 +30,17 @@ export const addToCart = (item) => {
   };
 };
 
-export const removeFromCart = (index) => {
+export const removeFromCart = (id) => {
   return {
     type: "REMOVE_FROM_CART",
-    payload: index,
+    payload: id,
   };
 };
 
-export const updateItemToEdit = (itemIndex) => {
+export const updateItemToEdit = (id) => {
   return {
     type: "UPDATE_ITEM_TO_EDIT",
-    payload: itemIndex,
+    payload: id,
   };
 };
 
@@ -68,10 +68,10 @@ export const hideSidebar = () => {
   };
 };
 
-export const editCartItem = (index, item) => {
+export const editCartItem = (itemIndex, item) => {
   return {
     type: "EDIT_CART_ITEM",
-    payload: { index, item },
+    payload: { itemIndex, item },
   };
 };
 

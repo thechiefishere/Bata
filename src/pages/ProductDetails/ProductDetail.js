@@ -44,6 +44,7 @@ const ProductDetail = () => {
 
   const handleAddToCart = () => {
     const cartItem = {
+      id: `${product._id}${selectedSize}`,
       product,
       quantity: orderCount,
       size: selectedSize,

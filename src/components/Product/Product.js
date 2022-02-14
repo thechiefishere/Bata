@@ -38,6 +38,7 @@ const Product = ({ product }) => {
       <BsCart2
         onClick={() => {
           const item = {
+            id: `${product._id}40`,
             product,
             quantity: 1,
             size: 40,

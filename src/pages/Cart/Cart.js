@@ -16,10 +16,8 @@ const Cart = () => {
       </h2>
       <section className="cart__details">
         <article className="cart__items">
-          {cartItems.map((item, index) => {
-            return (
-              <CartItem key={item.product._id} item={item} index={index} />
-            );
+          {cartItems.map((item) => {
+            return <CartItem key={item.id} item={item} />;
           })}
         </article>
         <Checkout cartItems={cartItems} />

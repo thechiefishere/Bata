@@ -1,3 +1,5 @@
+import { isItemInCart } from "../util/functions";
+
 const initialState = {
   isLoadingData: true,
   products: [],
@@ -22,20 +24,33 @@ export const reducer = (state = initialState, action) => {
         products: action.payload,
       };
     case "ADD_TO_CART":
+      if (isItemInCart(action.payload, state.cartItems)) {
+        const updatedCartItems = state.cartItems.map((item) => {
+          if (action.payload.id === item.id) {
+            item.quantity = item.quantity + 1;
+            return item;
+          }
+          return item;
+        });
+        return {
+          ...state,
+          cartItems: updatedCartItems,
+        };
+      }
       return {
         ...state,
         cartItems: [...state.cartItems, action.payload],
       };
     case "REMOVE_FROM_CART":
       const updatedCart = state.cartItems.filter(
-        (item, index) => index !== action.payload
+        (item) => item.id !== action.payload
       );
       return {
         ...state,
         cartItems: updatedCart,
       };
     case "UPDATE_ITEM_TO_EDIT":
-      const item = state.cartItems[action.payload];
+      const item = state.cartItems.find((val) => val.id === action.payload);
       return {
         ...state,
         itemToEdit: item,
@@ -51,8 +66,24 @@ export const reducer = (state = initialState, action) => {
         showEditModal: false,
       };
     case "EDIT_CART_ITEM":
+      if (isItemInCart(action.payload.item, state.cartItems)) {
+        let updatedCartItems = state.cartItems.map((item) => {
+          if (action.payload.item.id === item.id) {
+            item.quantity = item.quantity + action.payload.item.quantity;
+            return item;
+          }
+          return item;
+        });
+        updatedCartItems = updatedCartItems.filter(
+          (item, index) => index != action.payload.itemIndex
+        );
+        return {
+          ...state,
+          cartItems: updatedCartItems,
+        };
+      }
       const updatedCartItem = state.cartItems.map((item, index) => {
-        if (index === action.payload.index) return action.payload.item;
+        if (index === action.payload.itemIndex) return action.payload.item;
         return item;
       });
       return {

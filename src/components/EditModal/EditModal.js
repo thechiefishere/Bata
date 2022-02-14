@@ -33,6 +33,7 @@ const EditModal = () => {
   const handleSave = () => {
     const itemIndex = getItemIndex(item, cartItems);
     const updatedItem = {
+      id: `${item.product._id}${selectedSize}`,
       product: item.product,
       quantity: orderCount,
       size: selectedSize,

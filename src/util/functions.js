@@ -34,3 +34,9 @@ export const getSumTotal = (cartItems) => {
   const sum = getSubTotal(cartItems) + getTotalTax(cartItems);
   return sum;
 };
+
+export const isItemInCart = (item, cartItems) => {
+  const isPresent = cartItems.some((val) => val.id === item.id);
+  if (isPresent) return true;
+  return false;
+};
