@@ -1,4 +1,4 @@
-const url = "http://localhost:5000/api/v1/footwears";
+const url = "https://footwears-api.herokuapp.com/api/v1/footwears";
 
 export const fetchData = () => async (dispatch) => {
   dispatch(setLoadingState(true));
