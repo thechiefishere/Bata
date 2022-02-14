@@ -3,7 +3,7 @@ import { isItemInCart } from "../util/functions";
 const initialState = {
   isLoadingData: true,
   products: [],
-  cartItems: [],
+  cartItems: JSON.parse(localStorage.getItem("bataCartItems")) || [],
   showEditModal: false,
   itemToEdit: {},
   showSidebar: false,
@@ -32,19 +32,23 @@ export const reducer = (state = initialState, action) => {
           }
           return item;
         });
+        localStorage.setItem("bataCartItems", JSON.stringify(updatedCartItems));
         return {
           ...state,
           cartItems: updatedCartItems,
         };
       }
+      const items = [...state.cartItems, action.payload];
+      localStorage.setItem("bataCartItems", JSON.stringify(items));
       return {
         ...state,
-        cartItems: [...state.cartItems, action.payload],
+        cartItems: items,
       };
     case "REMOVE_FROM_CART":
       const updatedCart = state.cartItems.filter(
         (item) => item.id !== action.payload
       );
+      localStorage.setItem("bataCartItems", JSON.stringify(updatedCart));
       return {
         ...state,
         cartItems: updatedCart,
@@ -77,6 +81,7 @@ export const reducer = (state = initialState, action) => {
         updatedCartItems = updatedCartItems.filter(
           (item, index) => index != action.payload.itemIndex
         );
+        localStorage.setItem("bataCartItems", JSON.stringify(updatedCartItems));
         return {
           ...state,
           cartItems: updatedCartItems,
@@ -86,6 +91,7 @@ export const reducer = (state = initialState, action) => {
         if (index === action.payload.itemIndex) return action.payload.item;
         return item;
       });
+      localStorage.setItem("bataCartItems", JSON.stringify(updatedCartItem));
       return {
         ...state,
         cartItems: updatedCartItem,
